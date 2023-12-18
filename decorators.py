@@ -1,8 +1,10 @@
-def decorator(func, *args, **kwargs):
-    def wrap():
+def decorator(func):
+    def wrap(*args, **kwargs):
         print("do first thing")
-        func(*args, **kwargs)
+        res = func(*args, **kwargs)
         print("do second thing")
+        return res 
+
     return wrap
 
 @decorator
